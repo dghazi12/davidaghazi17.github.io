@@ -20,5 +20,5 @@ app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
 app.listen(PORT, () => {
-  console.log(`Server listening on: http://localhost:${PORT}!`);
+  console.log(`Server listening on: http://localhost:${PORT}`);
 });
