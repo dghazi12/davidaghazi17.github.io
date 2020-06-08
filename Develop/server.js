@@ -13,14 +13,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
 
-// routes
-require("./routes/api-routes")
-require("./routes/html-routes")
+require("./routes/api-routes")(app)
+require("./routes/html-routes")(app)
 
 app.listen(PORT, () => {
   console.log(`Server listening on: http://localhost:${PORT}`);
